@@ -18,8 +18,7 @@ connectDB();
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/cars', require('./routes/cars'));
 app.use('/api/parts', require('./routes/parts'));
-app.use('/api/rent', require('./routes/rent'));
-app.use('/api/brands', require('./routes/brands'));
+
 
 // error handler
 app.use(errorHandler);
