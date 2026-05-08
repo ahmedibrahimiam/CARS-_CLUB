@@ -10,17 +10,19 @@ const CarSchema = new mongoose.Schema({
         required: true, 
         enum: ['sale', 'rent'] 
     },
-    // حقل السعر للبيع (اختياري لو النوع إيجار)
     price: { 
         type: Number, 
         required: function() { return this.category === 'sale'; } 
     },
-    // حقل السعر لليوم (اختياري لو النوع بيع)
     pricePerDay: { 
         type: Number, 
         required: function() { return this.category === 'rent'; } 
     },
-    imageUrl: { type: String, default: 'no-photo.jpg' }
+    // التعديل الجديد هنا
+    images: {
+        type: [String],
+        default: []
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model('Car', CarSchema);
