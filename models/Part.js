@@ -4,7 +4,7 @@ const PartSchema = new mongoose.Schema({
   description: { type: String },
   price: { type: Number, required: [true, 'Please add a price'] },
   stockQuantity: { type: Number, default: 0 },
-  imageUrl: { type: String },
+  images: { type: [String], default: [] },
   category: { type: String, default: 'car-parts' },
   compatibleCars: [{ type: String }]
 }, { timestamps: true });

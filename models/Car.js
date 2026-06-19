@@ -18,7 +18,6 @@ const CarSchema = new mongoose.Schema({
         type: Number, 
         required: function() { return this.category === 'rent'; } 
     },
-    // التعديل الجديد هنا
     images: {
         type: [String],
         default: []
